@@ -2,7 +2,7 @@
 
 public class Language
 {
-    public int LanguageId { get; set; }
+    public int Id { get; set; }
     public String MovieLanguage { get; set; }
 
     public Boolean Subtitles{ get; set; }

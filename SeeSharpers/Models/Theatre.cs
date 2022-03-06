@@ -2,11 +2,11 @@
 
 public class Theatre
 {
-    public int TheatreId { get; set; }
+    public int Id { get; set; }
 
-    public int TheatreNumber { get; set; }
+    public int Number { get; set; }
 
-    public int TheatreAmountOfRows { get; set; }
+    public int AmountOfRows { get; set; }
 
-    public int TheatreAmountOfSeats { get; set; }
+    public int AmountOfSeats { get; set; }
 }
