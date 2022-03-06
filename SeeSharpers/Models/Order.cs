@@ -1,22 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.Build.Framework;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace SeeSharpers.Models;
 
 public class Order
 {
-    public int OrderId { get; set; }
+    public int Id { get; set; }
 
-    public string? OrderEmail { get; set; }
+    public string? Email { get; set; }
 
-    public int OrderCode { get; set; }
+    public int Code { get; set; }
 
     public DateTime CreatedDate { get; set; }
 
-    public Boolean OrderSecret { get; set; }
+    public Boolean Secret { get; set; }
 
-    [ForeignKey("Tickets")]
-    public List<Ticket> OrderTickets { get; set; }
+    [Required]
+ 
+    public List<Ticket> Tickets { get; set; }
 
-    public Boolean OrderIsPrinted { get; set; }
+    public Boolean IsPrinted { get; set; }
 }

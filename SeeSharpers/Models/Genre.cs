@@ -2,7 +2,7 @@
 
 public class Genre
 {
-    public int GenreId { get; set; }
-    public String GenreName { get; set; }
-    public String GenreDescription { get; set; }
+    public int Id { get; set; }
+    public String Name { get; set; }
+    public String Description { get; set; }
 }

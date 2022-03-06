@@ -6,26 +6,26 @@ namespace SeeSharpers.Models;
 
 public class Movie
 {
-    public int MovieId { get; set; }
+    public int Id { get; set; }
     [Required]
-    public String MovieTitle { get; set; }
+    public String Title { get; set; }
     [Required]
-    public TimeSpan MovieDuration { get; set; }
+    public TimeSpan Duration { get; set; }
     [Required]
     public Boolean Movie3d { get; set; }
     [Required]
-    public DateTime MovieBeginTime { get; set; }
+    public DateTime BeginTime { get; set; }
     [Required]
-    public Int16 MovieAgeRequirement { get; set; }
+    public Int16 AgeRequirement { get; set; }
     [Required]
-    public String MovieThumbnail { get; set; }
+    public String Thumbnail { get; set; }
     [Required]
-    public List<Language> MovieLanguage { get; set; }
+    public List<Language> Language { get; set; }
     [Required]
-    public String MovieDescription { get; set; }
+    public String Description { get; set; }
 
 
     [Required]
     [ForeignKey("Genres")]
-    public String MovieGenre { get; set; }
+    public String Genre { get; set; }
 }

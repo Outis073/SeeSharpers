@@ -2,7 +2,7 @@
 
 public class Viewing
 {
-    public int ViewingId { get; set; }
+    public int Id { get; set; }
 
-    public DateTime ViewingStartDateTime { get; set; }
+    public DateTime StartDateTime { get; set; }
 }
