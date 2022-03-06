@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SeeSharpers.Data;
 
@@ -11,9 +12,10 @@ using SeeSharpers.Data;
 namespace SeeSharpers.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220305100125_GenresLanguages")]
+    partial class GenresLanguages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -298,108 +300,17 @@ namespace SeeSharpers.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MovieThumbnail")
+                    b.Property<string>("MovieName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MovieTitle")
+                    b.Property<string>("MovieThumbnail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MovieId");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("SeeSharpers.Models.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("OrderCode")
-                        .HasColumnType("int");
-
-                    b.Property<string>("OrderEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("OrderSecret")
-                        .HasColumnType("bit");
-
-                    b.HasKey("OrderId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("SeeSharpers.Models.Theatre", b =>
-                {
-                    b.Property<int>("TheatreId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TheatreId"), 1L, 1);
-
-                    b.Property<int>("TheatreAmountOfRows")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TheatreAmountOfSeats")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TheatreNumber")
-                        .HasColumnType("int");
-
-                    b.HasKey("TheatreId");
-
-                    b.ToTable("Theatres");
-                });
-
-            modelBuilder.Entity("SeeSharpers.Models.Ticket", b =>
-                {
-                    b.Property<int>("TicketId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TicketId"), 1L, 1);
-
-                    b.Property<int>("TicketCode")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TicketDiscountType")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("TicketPopcornArrangement")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TicketSeat")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TicketTotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("TicketId");
-
-                    b.ToTable("Tickets");
-                });
-
-            modelBuilder.Entity("SeeSharpers.Models.Viewing", b =>
-                {
-                    b.Property<int>("ViewingId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ViewingId"), 1L, 1);
-
-                    b.Property<DateTime>("ViewingStartDateTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ViewingId");
-
-                    b.ToTable("Viewings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
