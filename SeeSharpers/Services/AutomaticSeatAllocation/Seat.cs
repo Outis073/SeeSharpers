@@ -2,17 +2,19 @@
 {
     public class Seat
     {
+        public int Id { get; }
         public int SeatNumber { get; }
-        public int PositionX { get; }
+        public int PositionX { get; set; }
         public int PositionY { get; }
         public bool Occupied { get; set; }
 
-        public Seat(int seatNumber, int x, int y) : this(seatNumber, x, y, false)
+        public Seat(int id, int seatNumber, int x, int y) : this(id, seatNumber, x, y, false)
         {
         }
 
-        public Seat(int seatNumber, int x, int y, bool isOccupied)
+        public Seat(int id, int seatNumber, int x, int y, bool isOccupied)
         {
+            Id = id;
             SeatNumber = seatNumber;
             PositionX = x;
             PositionY = y;
