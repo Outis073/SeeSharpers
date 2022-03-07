@@ -1,23 +1,31 @@
-﻿using System.Reflection.Metadata;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection.Metadata;
+using Microsoft.Build.Framework;
 
 namespace SeeSharpers.Models;
 
 public class Movie
 {
-    public int MovieId { get; set; }
-    public String MovieName { get; set; }
-
-    public TimeSpan MovieDuration { get; set; }
-
+    public int Id { get; set; }
+    [Required]
+    public String Title { get; set; }
+    [Required]
+    public TimeSpan Duration { get; set; }
+    [Required]
     public Boolean Movie3d { get; set; }
+    [Required]
+    public DateTime BeginTime { get; set; }
+    [Required]
+    public Int16 AgeRequirement { get; set; }
+    [Required]
+    public String Thumbnail { get; set; }
+    [Required]
+    public List<Language> Language { get; set; }
+    [Required]
+    public String Description { get; set; }
 
-    public DateTime MovieBeginTime { get; set; }
 
-    public Int16 MovieAgeRequirement { get; set; }
-
-    public String MovieThumbnail { get; set; }
-
-    public String MovieLanguage { get; set; }
-
-    public String MovieDescription { get; set; }
+    [Required]
+    [ForeignKey("Genres")]
+    public String Genre { get; set; }
 }
