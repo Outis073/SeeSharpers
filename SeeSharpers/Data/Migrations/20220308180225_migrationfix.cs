@@ -161,6 +161,24 @@ namespace SeeSharpers.Data.Migrations
                 nullable: false,
                 defaultValue: false);
 
+            migrationBuilder.AddColumn<int>(
+                name: "TheatreId",
+                table: "Viewings",
+                type: "int",
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "MovieId",
+                table: "Viewings",
+                type: "int",
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "ViewingId",
+                table: "Orders",
+                type: "int",
+                nullable: true);
+
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_OrderId",
                 table: "Tickets",
@@ -172,6 +190,27 @@ namespace SeeSharpers.Data.Migrations
                 column: "OrderId",
                 principalTable: "Orders",
                 principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Orders_Viewings_ViewingId",
+                table: "Orders",
+                column: "ViewingId",
+                principalTable: "Viewings",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Viewings_Theatres_TheatreId",
+                table: "Viewings",
+                column: "TheatreId",
+                principalTable: "Theatres",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Viewings_Movies_MovieId",
+                table: "Viewings",
+                column: "MovieId",
+                principalTable: "Movies",
+                principalColumn: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -179,6 +218,30 @@ namespace SeeSharpers.Data.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_Tickets_Orders_OrderId",
                 table: "Tickets");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Viewings_Movies_MovieId",
+                table: "Viewings");
+
+           migrationBuilder.DropForeignKey(
+                name: "FK_Orders_Viewings_ViewingId",
+                table: "Orders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Viewings_Theatres_TheatreId",
+                table: "Viewings");
+
+            migrationBuilder.DropColumn(
+                name: "ViewingId",
+                table: "Orders");
+
+            migrationBuilder.DropColumn(
+                name: "TheatreId",
+                table: "Viewings");
+
+            migrationBuilder.DropColumn(
+                name: "MovieId",
+                table: "Viewings");
 
             migrationBuilder.DropIndex(
                 name: "IX_Tickets_OrderId",
