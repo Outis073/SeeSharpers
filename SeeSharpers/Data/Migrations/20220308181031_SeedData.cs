@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.WebEncoders.Testing;
 
 #nullable disable
@@ -50,7 +50,6 @@ namespace SeeSharpers.Data.Migrations
                 columns: new[] { "Id", "StartDateTime" },
                 values: new object[] { 0, DateTime.Parse("18 Aug 2022 18:23:16 GMT") }
             );
-
 
             migrationBuilder.InsertData(
                 table: "Orders",
