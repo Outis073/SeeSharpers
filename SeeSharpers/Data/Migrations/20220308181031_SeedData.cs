@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.WebEncoders.Testing;
+
 
 #nullable disable
 
@@ -68,7 +69,6 @@ namespace SeeSharpers.Data.Migrations
                 columns: new[] { "Id", "Email", "Code", "CreatedDate", "Secret" },
                 values: new object[] { 3, "nope@test.nl", 02, DateTime.Parse("18 Aug 2022 18:23:16 GMT"), false }
             );
-
 
         }
         protected override void Down(MigrationBuilder migrationBuilder)
