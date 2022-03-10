@@ -18,4 +18,22 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\PrintTicket\GetOrder.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\PrintTicket\GetOrder.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\PrintTicket\Index1.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\PrintTicket\Index2.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\PrintTicket\Index1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\PrintTicket\Index2.cshtml" />
+  </ItemGroup>
+
 </Project>

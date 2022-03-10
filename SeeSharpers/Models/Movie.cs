@@ -26,6 +26,6 @@ public class Movie
 
 
     [Required]
-    [ForeignKey("Genres")]
+    [ForeignKey(name: "Genres")]
     public String Genre { get; set; }
 }

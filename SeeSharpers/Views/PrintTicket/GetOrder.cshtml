@@ -1,0 +1,27 @@
+﻿@model SeeSharpers.Models.Order
+
+@{
+    ViewBag.Title = "Order";
+    Layout = "_Layout";
+}
+
+<h2>Uw Order</h2>
+
+
+<table asp-controller="PrintTicket" asp-action="Index" class="table">
+    <tr>
+        <th scope="row">@Html.DisplayNameFor(model => model.Id)</th>
+        <th scope="row">@Html.DisplayNameFor(model => model.Email)</th>
+        <th scope="row">@Html.DisplayNameFor(model => model.Code)</th>
+        <th></th>
+
+    </tr>
+    <tr>
+        <td>@Html.DisplayFor(model => model.Id)</td>
+        <td>@Html.DisplayFor(model => model.Email)</td>
+        <td>@Html.DisplayFor(model => model.Code)</td>
+        <td><a class="btn btn-primary" asp-area="" asp-controller="PrintTicket" asp-action="Index">Print Tickets</a></td>
+    </tr>
+
+</table>
+
