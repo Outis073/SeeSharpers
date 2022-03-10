@@ -13,7 +13,7 @@ namespace SeeSharpers.Services.SeatAllocateService
         {
             Position = position;
             Occupied = occupied;
-            RowNumber = (int)position.Y + 1;
+            RowNumber = (int) position.Y + 1;
         }
 
         protected bool Equals(Seat other)
@@ -35,22 +35,3 @@ namespace SeeSharpers.Services.SeatAllocateService
         }
     }
 }
-
-// viewing.
-
-// select seat from ticket where viewing_id
-
-// select all from viewing_seats where viewing_id == (id die je al hebt)
-
-// relatie viewing > viewing_seats.
-// - id
-// - viewing_id
-// - x
-// - y
-
-
-// 60 stoelen en een rij heeft 10 stoelen
-
-// 60 / 10 = aantal DataRowState.
-
-// Zaal: opslaan: stoelen per rij en hoeveel rijen.
