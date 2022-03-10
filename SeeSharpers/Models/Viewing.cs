@@ -8,5 +8,5 @@ public class Viewing
 
     public Theatre Theatre { get; set; }
 
-    public Movie Movie { get; set; }    
+    public Movie Movie { get; set; }
 }

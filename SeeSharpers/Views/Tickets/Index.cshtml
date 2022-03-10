@@ -27,11 +27,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.TotalPrice)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    var price = 16.00;
+    if(item.PopcornArrangement){
+        price += 2.50;
+    }
+    if(item.DiscountType > 0){
+        price -= 2.50;
+    }
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Seat)
@@ -46,12 +52,7 @@
                 @Html.DisplayFor(modelItem => item.PopcornArrangement)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => price)
             </td>
         </tr>
 }

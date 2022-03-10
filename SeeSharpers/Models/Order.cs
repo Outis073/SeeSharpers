@@ -7,6 +7,7 @@ namespace SeeSharpers.Models;
 
 public class Order
 {
+
     public int Id { get; set; }
 
     public string? Email { get; set; }
@@ -17,8 +18,6 @@ public class Order
 
     public Boolean Secret { get; set; }
 
-    [Required]
- 
     public List<Ticket> Tickets { get; set; }
 
     public Boolean IsPrinted { get; set; }
