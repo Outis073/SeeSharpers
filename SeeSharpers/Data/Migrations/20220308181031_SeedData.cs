@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.Extensions.WebEncoders.Testing;
+
 
 #nullable disable
 
@@ -48,6 +50,24 @@ namespace SeeSharpers.Data.Migrations
                 table: "Viewings",
                 columns: new[] { "Id", "StartDateTime" },
                 values: new object[] { 0, DateTime.Parse("18 Aug 2022 18:23:16 GMT") }
+            );
+
+            migrationBuilder.InsertData(
+                table: "Orders",
+                columns: new[] { "Id", "Email", "Code", "CreatedDate", "Secret"},
+                values: new object[] { 1, "test@test.nl", 12345678, DateTime.Parse("18 Aug 2022 18:23:16 GMT"), false }
+            );
+
+            migrationBuilder.InsertData(
+                table: "Orders",
+                columns: new[] { "Id", "Email", "Code", "CreatedDate", "Secret" },
+                values: new object[] { 2, "jup@test.nl", 01, DateTime.Parse("18 Aug 2022 18:23:16 GMT"), false }
+            );
+
+            migrationBuilder.InsertData(
+                table: "Orders",
+                columns: new[] { "Id", "Email", "Code", "CreatedDate", "Secret" },
+                values: new object[] { 3, "nope@test.nl", 02, DateTime.Parse("18 Aug 2022 18:23:16 GMT"), false }
             );
 
         }

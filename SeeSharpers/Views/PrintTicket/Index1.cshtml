@@ -1,0 +1,25 @@
+﻿@using SeeSharpers.Controllers
+@{
+    ViewData["Title"] = "Print Tickets";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tickets ophalen</h1>
+    <p style="color: red"> Vul iets in </p>
+    <p>Voer hier uw code in</p>
+    
+    <form asp-controller="PrintTicket" asp-action="GetOrder" method="get">
+        <div class="row">
+            <div class="col">
+                <label for="inputCode" id="OrderCode">Uw code</label>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="inputCode" name="inputCode"/>
+            </div>
+            <div class="col">
+                <input type="submit" class="btn btn-primary" id="bttn_Submit" value="Haal Tickets Op"/>
+            </div>
+        </div>
+    </form>
+
+</div>
