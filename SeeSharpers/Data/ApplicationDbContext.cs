@@ -23,6 +23,8 @@ namespace SeeSharpers.Data
 
         public DbSet<Viewing> Viewings { get; set; }
 
+        public DbSet<ViewingSeat> ViewingSeats { get; set; }
+
         public DbSet<Theatre> Theatres { get; set; }
 
 

@@ -13,4 +13,5 @@ public class Ticket
     public Boolean PopcornArrangement { get; set; }
 
     public decimal TotalPrice { get; set; }
+
 }

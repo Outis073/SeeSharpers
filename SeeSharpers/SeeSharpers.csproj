@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Tickets\Details.cshtml" />
+    <Content Remove="Views\Tickets\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.2" />
@@ -34,6 +39,11 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\PrintTicket\Index2.cshtml" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Folder Include="Services\SeatAllocateService\Extensions\" />
+    <Folder Include="Services\SeatAllocateService\Exceptions\" />
   </ItemGroup>
 
 </Project>
