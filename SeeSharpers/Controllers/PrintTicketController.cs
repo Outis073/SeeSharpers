@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SeeSharpers.Data;
-using SeeSharpers.Models;
-using static System.Console;
 
 namespace SeeSharpers.Controllers
 {
@@ -35,7 +32,6 @@ namespace SeeSharpers.Controllers
         public async Task<IActionResult> GetOrder(int? inputCode)
         {
             if (inputCode == null) return View("Index1");
-            /*var order = await _context.Orders.FindAsync(inputCode);*/
 
             try
             {
@@ -46,22 +42,8 @@ namespace SeeSharpers.Controllers
             }
             catch (Exception e)
             {
-
                 return View("Index2");
             }
-           
-            /*.Where(s => s.Code!.Equals(inputCode));*/
-
-
-
-
         }
-
-        /*public async Task<IActionResult> PrintTickets(int? Id)
-        {
-            var order = await _context.Orders.FindAsync(Id);
-            if (order == null) return View("Error")
-                List<Ticket> tickets = 
-        }*/
     }
 }

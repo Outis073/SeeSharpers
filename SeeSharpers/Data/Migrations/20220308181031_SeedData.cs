@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.WebEncoders.Testing;
 
-
 #nullable disable
 
 namespace SeeSharpers.Data.Migrations
