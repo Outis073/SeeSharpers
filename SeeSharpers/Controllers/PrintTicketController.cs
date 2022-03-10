@@ -35,13 +35,23 @@ namespace SeeSharpers.Controllers
         public async Task<IActionResult> GetOrder(int? inputCode)
         {
             if (inputCode == null) return View("Index1");
-            var order = await _context.Orders.FindAsync(inputCode);
-            /*.Where(s => s.Code!.Equals(inputCode));*/
-            if (order == null) return View("Index2");
-                
-            ViewData["Order"] = order;
+            /*var order = await _context.Orders.FindAsync(inputCode);*/
 
-            return View(order);
+            try
+            {
+                var order = _context.Orders.Single(a => a.Code == inputCode);
+                ViewData["Order"] = order;
+
+                return View(order);
+            }
+            catch (Exception e)
+            {
+
+                return View("Index2");
+            }
+           
+            /*.Where(s => s.Code!.Equals(inputCode));*/
+
 
 
 
