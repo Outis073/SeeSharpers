@@ -4,15 +4,16 @@ namespace SeeSharpers.Services.SeatAllocateService
 {
     public class Seat
     {
-        public int Number { get; init; }
+        public int Number { get; set; }
+        public int RowNumber { get; init; }
         public Vector2 Position { get; init; }
         public bool Occupied { get; set; }
 
-        public Seat(int number, Vector2 position, bool occupied = false)
+        public Seat(Vector2 position, bool occupied = false)
         {
-            Number = number;
             Position = position;
             Occupied = occupied;
+            RowNumber = (int)position.Y + 1;
         }
 
         protected bool Equals(Seat other)
